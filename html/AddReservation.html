@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Reservation</title>
+    <!-- custom css file link-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- header section starts -->
+
+    <header>
+        <nav class="navbar">
+            <a href="#home">view reservations</a>
+            <a href="html/AddReservation.html">add reservation</a>
+            <a href="#menu">availabilty</a>
+            <a href="#popular">hotels</a>
+            <a href="#gallery">employees</a>
+            <a id="profile" href="../index.html">profile</a>
+        </nav>
+    </header>
+
+    <!-- header section ends -->
+
+    <div class="container">
+        <form class="form-control" action="">
+            <p class="title">hotel booking</p>
+            <div class="input-field">
+                <input required="" class="input" type="text" placeholder="name" />
+            </div>
+            <div class="input-field">
+                <input required="" class="input" type="email" placeholder="email" />
+            </div>
+            <div class="input-field">
+                <div class="date">
+                    <label>from</label>
+                    <input required="" class="input" type="date" />
+                </div>
+            </div>
+            <div class="input-field">
+                <div class="date">
+                    <label>to</label>
+                    <input required="" class="input" type="date" />
+                </div>
+            </div>
+            <label for="hotel">Choose hotel:</label>
+            <select name="hotel" id="hotel">
+                <optgroup label="choose from this hotels">
+                    @for (item of hotlist; track item) {
+                    <option>{{ item.HotelName }}</option>
+                    }
+                </optgroup>
+            </select>
+            <button class="submit-btn">Sign In</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
