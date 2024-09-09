@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar">
             <a href="#home">view reservations</a>
-            <a href="html/AddReservation.html">add reservation</a>
+            <a href="AddReservation.html">add reservation</a>
             <a href="#menu">availabilty</a>
             <a href="AddHotel.html">add hotels</a>
             <a href="AddEmployee.html">employees</a>
@@ -28,34 +28,21 @@
 
     <div class="container">
         <form class="form-control" action="">
-            <p class="title">hotel booking</p>
+            <p class="title">new employee</p>
             <div class="input-field">
-                <input required="" class="input" type="text" placeholder="client name" />
+                <input required="" class="input" type="text" placeholder="Employee name" />
             </div>
             <div class="input-field">
-                <input required="" class="input" type="email" placeholder="client email" />
+                <input required="" class="input" type="email" placeholder="Employee email" />
             </div>
-            <div class="input-field">
-                <div class="date">
-                    <label>check in</label>
-                    <input required="" class="input" type="date" />
-                </div>
-            </div>
-            <div class="input-field">
-                <div class="date">
-                    <label>check out</label>
-                    <input required="" class="input" type="date" />
-                </div>
-            </div>
-            <label for="hotel">Choose hotel:</label>
+            <label for="hotel">Choose role:</label>
             <select name="hotel" id="hotel">
                 <optgroup label="choose from this hotels">
-                    <option>hilton</option>
-                    <option>baron</option>
-                    <option>novotel</option>
+                    <option>Employee</option>
+                    <option>Admin</option>
                 </optgroup>
             </select>
-            <button class="submit-btn">reserve</button>
+            <button class="submit-btn">add</button>
         </form>
     </div>
 
