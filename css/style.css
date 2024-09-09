@@ -266,3 +266,48 @@ select {
 }
 
 /* End add-reservation */
+
+.containerh {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+  width: 80%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.containerh table {
+  width: 100%;
+  border-collapse: collapse;
+  text-transform: capitalize;
+  margin: 0 auto;
+}
+
+.containerh th,
+.containerh td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.containerh th {
+  background-color: var(--secondary-color);
+  text-align: left;
+  font-size: var(--title-font);
+}
+
+.containerh tr:nth-child(even) {
+  background-color: var(--secondary-color);
+}
+
+.containerh tr:hover {
+  background-color: var(--third-color);
+}
+
+.containerh td:hover {
+  transform: translateX(10px);
+}
