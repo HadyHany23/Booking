@@ -156,7 +156,7 @@ body {
   width: 90%;
   margin: 0 auto;
   padding: 2rem;
-  margin-top: 5rem;
+  margin-top: 25rem;
 }
 
 .input {
@@ -170,7 +170,6 @@ body {
   border: none;
   margin: 1rem auto;
   width: 50%;
-  margin-top: 20rem;
 }
 
 .input label {
