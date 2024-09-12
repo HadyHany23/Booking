@@ -159,7 +159,7 @@ body {
   margin-top: 25rem;
 }
 
-.input {
+.table_cont .input {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -172,11 +172,11 @@ body {
   width: 50%;
 }
 
-.input label {
+.table_cont .input label {
   font-size: var(--label-font);
 }
 
-.input input {
+.table_cont .input input {
   border: 1px solid black;
   padding: 1rem;
   border-radius: 1rem;
