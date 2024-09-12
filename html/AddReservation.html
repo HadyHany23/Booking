@@ -11,52 +11,28 @@
 
 <body>
 
-    <!-- header section starts -->
+    <div class="navbar">
+        <a href="ViewReservation.html">view reservations</a>
+        <a href="AddReservation.html">add reservation</a>
+        <a href="AvailableHotels.html">availabilty</a>
+        <a href="AddHotel.html">add hotels</a>
+        <a href="AddEmployee.html">employees</a>
+        <a id="profile" href="../index.html">profile</a>
+    </div>
 
-    <header>
-        <nav class="navbar">
-            <a href="ViewReservation.html">view reservations</a>
-            <a href="AddReservation.html">add reservation</a>
-            <a href="AvailableHotels.html">availabilty</a>
-            <a href="AddHotel.html">add hotels</a>
-            <a href="AddEmployee.html">employees</a>
-            <a id="profile" href="../index.html">profile</a>
-        </nav>
-    </header>
-
-    <!-- header section ends -->
-
-    <div class="container">
-        <form class="form-control" action="">
-            <p class="title">hotel booking</p>
-            <div class="input-field">
-                <input required="" class="input" type="text" placeholder="client name" />
+    <div class="main_cont">
+        <p class="heading">add reservation</p>
+        <form action="">
+            <div class="input">
+                <label for="user_name">enter email</label>
+                <input type="text" id="user_name">
             </div>
-            <div class="input-field">
-                <input required="" class="input" type="email" placeholder="client email" />
+            <div class="input">
+                <label for="user_password">enter password</label>
+                <input type="text" id="user_password">
             </div>
-            <div class="input-field">
-                <div class="date">
-                    <label>check in</label>
-                    <input required="" class="input" type="date" />
-                </div>
-            </div>
-            <div class="input-field">
-                <div class="date">
-                    <label>check out</label>
-                    <input required="" class="input" type="date" />
-                </div>
-            </div>
-            <label for="hotel">Choose hotel:</label>
-            <select name="hotel" id="hotel">
-                <optgroup label="choose from this hotels">
-                    <option>hilton</option>
-                    <option>baron</option>
-                    <option>novotel</option>
-                </optgroup>
-            </select>
-            <button class="submit-btn">reserve</button>
         </form>
+        <button class="btn">add reservation</button>
     </div>
 
 </body>

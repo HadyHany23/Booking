@@ -14,40 +14,30 @@
 
 <body>
 
-    <!-- header section starts -->
-
-    <header>
-        <nav class="navbar">
-            <a href="html/ViewReservation.html">view reservations</a>
-            <a href="html/AddReservation.html">add reservation</a>
-            <a href="html/AvailableHotels.html">availabilty</a>
-            <a href="#popular">add hotels</a>
-            <a href="html/AddEmployee.html">employees</a>
-            <a id="profile" href="index.html">profile</a>
-        </nav>
-    </header>
-
-    <!-- header section ends -->
-
-    <!-- Start login -->
-
-    <div class="container" id="login">
-        <form class="form-control" action="">
-            <p class="title">Login</p>
-            <div class="input-field">
-                <input required="" class="input" type="text" placeholder="enter email" />
-            </div>
-            <div class="input-field">
-                <input required="" class="input" type="password" placeholder="password" />
-            </div>
-            <button class="submit-btn">log in</button>
-        </form>
+    <div class="navbar">
+        <a href="html/ViewReservation.html">view reservations</a>
+        <a href="html/AddReservation.html">add reservation</a>
+        <a href="html/AvailableHotels.html">availabilty</a>
+        <a href="html/AddHotel.html">add hotels</a>
+        <a href="html/AddEmployee.html">employees</a>
+        <a id="profile" href="index.html">profile</a>
     </div>
 
-    <!-- End login -->
 
-
-
+    <div class="main_cont">
+        <p class="heading">login</p>
+        <form action="">
+            <div class="input">
+                <label for="user_name">enter email</label>
+                <input type="text" id="user_name">
+            </div>
+            <div class="input">
+                <label for="user_password">enter password</label>
+                <input type="text" id="user_password">
+            </div>
+        </form>
+        <button class="btn">login</button>
+    </div>
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>

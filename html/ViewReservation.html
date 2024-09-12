@@ -10,36 +10,51 @@
 </head>
 
 <body>
-    <!-- header section starts -->
+    <div class="navbar">
+        <a href="ViewReservation.html">view reservations</a>
+        <a href="AddReservation.html">add reservation</a>
+        <a href="AvailableHotels.html">availabilty</a>
+        <a href="AddHotel.html">add hotels</a>
+        <a href="AddEmployee.html">employees</a>
+        <a id="profile" href="../index.html">profile</a>
+    </div>
 
-    <header>
-        <nav class="navbar">
-            <a href="ViewReservation.html">view reservations</a>
-            <a href="AddReservation.html">add reservation</a>
-            <a href="AvailableHotels.html">availabilty</a>
-            <a href="AddHotel.html">add hotels</a>
-            <a href="AddEmployee.html">employees</a>
-            <a id="profile" href="../index.html">profile</a>
-        </nav>
-    </header>
 
-    <!-- header section ends -->
-    <div class="containerh">
-        <table>
+    <div class="input">
+        <label for="search">search</label>
+        <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for names..">
+    </div>
+
+
+    <div class="table_cont">
+
+        <table id="myTable">
             <thead>
                 <tr>
-                    <th>hotel name</th>
-                    <th>hotel location</th>
+                    <th onclick="sortTable(0)">Name</th>
+                    <th onclick="sortTable(1)">paid</th>
+                    <th onclick="sortTable(2)">Country</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>hilton</td>
-                    <td>baron</td>
+                    <td>ahmed</td>
+                    <td>80$</td>
+                    <td>ahmed01@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>aly</td>
+                    <td>60$</td>
+                    <td>aly02@gmail.com</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+
+    <!-- custom js file link -->
+    <script src="../js/script.js"></script>
+
 </body>
 
 </html>

@@ -1,11 +1,12 @@
 /* start variables */
 :root {
   --z-top: 1000;
-  --main-color: #a0521d;
-  --secondary-color: #e7c462;
-  --third-color: #d99227;
-  --section-padding: 100px;
+  --main-color: #eee;
+  --secondary-color: #fff;
+  --third-color: #222;
   --title-font: 28px;
+  --label-font: 20px;
+  --td-font: 16px;
 }
 
 * {
@@ -20,12 +21,12 @@
 }
 
 *::selection {
-  color: var(--secondary-color);
-  background-color: var(--main-color);
+  color: var(--main-color);
+  background-color: var(--third-color);
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1.4rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -33,18 +34,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary-color, #eee);
-  border-radius: 10px;
-}
-
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  width: 80%;
+  background: var(--third-color, #eee);
 }
 
 html {
@@ -55,259 +45,178 @@ html {
 
 body {
   overflow-x: hidden;
-}
-
-html::-webkit-scrollbar {
-  width: 1.4rem;
-}
-
-html::-webkit-scrollbar-track {
-  background: #333;
-}
-
-html::-webkit-scrollbar-thumb {
-  background: var(--yellow);
-}
-
-section {
-  min-height: 100vh;
-  padding: 1rem 10%;
-  padding-top: 8.5rem;
+  height: 1000000px;
 }
 
 /* End Variables */
 
-/* Start Header */
+/* start Form pages */
 
-header {
+.main_cont {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 20rem;
+}
+
+.main_cont .heading {
+  text-align: center;
+  font-size: var(--title-font);
+  font-weight: bold;
+}
+
+.main_cont .input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: fit-content;
+  padding: 1rem;
+  color: black;
+  border: none;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.main_cont .input label {
+  font-size: var(--label-font);
+}
+
+.main_cont .input input {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  color: black;
+}
+
+.main_cont .input input:focus {
+  border: 2px solid black;
+}
+
+.main_cont .btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  font-size: large;
+}
+
+.main_cont .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* End Form Pages */
+
+/* Start Navigation Bar */
+
+.navbar {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: var(--z-top);
-  width: 100%;
-  background: #fff;
-  padding: 1.5rem 10%;
-  box-shadow: 0 0.3rem 2rem rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
 }
 
-header .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style: none;
-  flex: 1;
+.navbar a {
+  background-color: transparent;
+  color: var(--third-color);
+  font-size: var(--label-font);
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-header .navbar a {
-  font-size: 1.7rem;
-  color: #666;
-  margin: 10px;
+.navbar a:hover {
+  transform: scale(1.1);
 }
 
-header .navbar #profile {
+.navbar a#profile {
   color: red;
 }
-/* End Header */
 
-/* Start login */
+/* End Navigation Bar */
 
-.form-control {
-  margin: 20px;
-  background-color: var(--secondary-color);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  padding: 25px;
-  border-radius: 8px;
-}
-.title {
-  font-size: var(--title-font);
-  font-weight: 800;
-  text-transform: capitalize;
-  text-align: center;
-}
-.input-field {
-  position: relative;
-  width: 100%;
-}
+/* Start Table pages */
 
-.input {
-  margin-top: 15px;
-  width: 100%;
-  outline: none;
-  border-radius: 8px;
-  height: 45px;
-  border: 1.5px solid var(--main-color);
-  background: transparent;
-  color: var(--main-color);
-  text-transform: capitalize;
-  font-size: large;
-  padding-left: 10px;
-}
-
-.input:focus {
-  border: 1.5px solid #2d79f3;
-}
-
-.submit-btn {
-  margin-top: 30px;
-  height: 55px;
-  background: var(--third-color);
-  border-radius: 11px;
-  border: 0;
-  outline: none;
-  color: var(--main-color);
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background-color: var(--main-color);
-  color: var(--third-color);
-}
-
-/* End login */
-
-/* Start add-reservation */
-
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-.form-control {
-  margin: 20px;
-  background-color: var(--secondary-color);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  padding: 25px;
-  border-radius: 8px;
-}
-.title {
-  font-size: var(--title-font);
-  font-weight: 800;
-  text-transform: capitalize;
-  text-align: center;
-}
-
-.input-field {
-  position: relative;
-  width: 100%;
-  font-size: 18px;
-  text-transform: capitalize;
-}
-
-.input {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100%;
-  outline: none;
-  border-radius: 8px;
-  height: 45px;
-  border: 1.5px solid var(--main-color);
-  background: transparent;
-  color: var(--main-color);
-  text-transform: capitalize;
-  font-size: large;
-  padding-left: 10px;
-}
-.input:focus {
-  border: 1.5px solid #2d79f3;
-}
-
-.date input {
-  margin-top: 5px;
-}
-
-select {
-  margin-bottom: 15px;
-  width: 100%;
-  outline: none;
-  border-radius: 8px;
-  height: 45px;
-  border: 1.5px solid var(--main-color);
-  background: var(--secondary-color);
-  color: var(--main-color);
-  text-transform: capitalize;
-  font-size: large;
-  padding-left: 10px;
-}
-
-.submit-btn {
-  margin-top: 30px;
-  height: 55px;
-  background: var(--third-color);
-  border-radius: 11px;
-  border: 0;
-  outline: none;
-  color: var(--main-color);
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background-color: var(--main-color);
-  color: var(--third-color);
-}
-
-/* End add-reservation */
-
-.containerh {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.table_cont {
+  width: 90%;
   margin: 0 auto;
-  gap: 20px;
-  width: 80%;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding: 2rem;
+  margin-top: 5rem;
 }
 
-.containerh table {
+.input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: fit-content;
+  padding: 1rem;
+  color: black;
+  border: none;
+  margin: 1rem auto;
+  width: 50%;
+  margin-top: 20rem;
+}
+
+.input label {
+  font-size: var(--label-font);
+}
+
+.input input {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  color: black;
+}
+
+.table_cont table {
   width: 100%;
   border-collapse: collapse;
-  text-transform: capitalize;
-  margin: 0 auto;
-}
-
-.containerh th,
-.containerh td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  font-size: 18px;
-  transition: 0.5s;
-}
-
-.containerh th {
+  padding: 1rem;
   background-color: var(--secondary-color);
-  text-align: left;
-  font-size: var(--title-font);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.containerh tr:nth-child(even) {
-  background-color: var(--secondary-color);
+.table_cont table tr {
+  border: 1px solid black;
 }
 
-.containerh tr:hover {
-  background-color: var(--third-color);
+th,
+td {
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: transparent;
 }
 
-.containerh td:hover {
-  transform: translateX(10px);
+th:hover,
+td:hover {
+  background: var(--third-color);
+  color: var(--main-color);
 }
+
+.table_cont table th {
+  font-size: var(--label-font);
+  text-align: center;
+}
+
+.table_cont table td {
+  font-size: var(--td-font);
+}
+
+/* ENd Table Pages */

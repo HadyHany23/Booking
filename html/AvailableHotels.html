@@ -10,36 +10,50 @@
 </head>
 
 <body>
-    <!-- header section starts -->
+    <div class="navbar">
+        <a href="ViewReservation.html">view reservations</a>
+        <a href="AddReservation.html">add reservation</a>
+        <a href="AvailableHotels.html">availabilty</a>
+        <a href="AddHotel.html">add hotels</a>
+        <a href="AddEmployee.html">employees</a>
+        <a id="profile" href="../index.html">profile</a>
+    </div>
 
-    <header>
-        <nav class="navbar">
-            <a href="ViewReservation.html">view reservations</a>
-            <a href="AddReservation.html">add reservation</a>
-            <a href="AvailableHotels.html">availabilty</a>
-            <a href="AddHotel.html">add hotels</a>
-            <a href="AddEmployee.html">employees</a>
-            <a id="profile" href="../index.html">profile</a>
-        </nav>
-    </header>
+    <div class="input">
+        <label for="search">search</label>
+        <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for names..">
+    </div>
 
-    <!-- header section ends -->
-    <div class="containerh">
-        <table>
+
+    <div class="table_cont">
+
+        <table id="myTable">
             <thead>
                 <tr>
-                    <th>hotel name</th>
-                    <th>hotel location</th>
+                    <th onclick="sortTable(0)">hotel name</th>
+                    <th onclick="sortTable(1)">hotel price</th>
+                    <th onclick="sortTable(2)">location</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>hilton</td>
+                    <td>80$</td>
+                    <td>cairo</td>
+                </tr>
+                <tr>
                     <td>baron</td>
+                    <td>60$</td>
+                    <td>luxor</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+
+    <!-- custom js file link -->
+    <script src="../js/script.js"></script>
+
 </body>
 
 </html>
