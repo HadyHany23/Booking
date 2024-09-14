@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<style>
+    #dashboard{
+        display: inline-block;
+        margin-top: 100px;
+        margin-left: 50px;
+        background-color: black;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        justify-content: center;
+    }
+    a:hover{
+        background-color: rgb(241, 241, 241);
+        color: black;
+        border-radius: 5px;
+    }
+    body{
+        background-color: rgb(71, 73, 73);
+    }
+</style>
+<body>
+
+
+    <!-- Form to add a new user -->
+    <form method="POST" action="{% url 'add_user' %}">
+        {% csrf_token %}
+        <div class="main_cont">
+            <p class="heading">Add New User</p>
+            
+            <!-- Username field -->
+            <div class="input">
+                <label for="user_name">Add User</label>
+                <input type="text" id="user_name" name="name" required>
+            </div>
+    
+            <!-- Password field -->
+            <div class="input">
+                <label for="user_password">User's password</label>
+                <input type="password" id="user_password" name="userpass" required>
+            </div>
+            <div class="input">
+                <label for="user_password">Confirm Password</label>
+                <input type="password" id="user_password" name="Confirm" required>
+            </div>
+            
+            <br>
+    
+            <!-- Radio buttons for Admin or Employee selection -->
+            <div>
+                <label for="admin">Admin</label>
+                <input type="radio" id="admin" name="role" value="admin" required>
+    
+                <label for="emp">Employee</label>
+                <input type="radio" id="emp" name="role" value="employee" required>
+            </div>
+            
+            <br>
+    
+            <button class="btn" type="submit">Add User</button>
+        </div>
+    </form>
+    
+
+    <p id="dashboard"><a href="{% url 'user_list' %}">Back to Dashboard</a></p>
+
+</body>
+
+</html>

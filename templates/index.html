@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- custom css file link-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+
+<form class="form-control" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="main_cont">
+        <p class="heading">login</p>
+            <div class="input">
+                <label for="user_name">Enter Username</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input">
+                <label for="password">enter password</label>
+                <input type="password" id="password" name="password">
+            </div>
+        <button class="btn" type="submit">login</button>
+    </div>
+</form>
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

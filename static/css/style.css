@@ -1,0 +1,221 @@
+/* start variables */
+:root {
+  --z-top: 1000;
+  --main-color: #eee;
+  --secondary-color: #fff;
+  --third-color: #222;
+  --title-font: 28px;
+  --label-font: 20px;
+  --td-font: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+*::selection {
+  color: var(--main-color);
+  background-color: var(--third-color);
+}
+
+::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--main-color, #333);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--third-color, #eee);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  height: 1000000px;
+}
+
+/* End Variables */
+
+/* start Form pages */
+
+.main_cont {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 25rem;
+}
+
+.main_cont .heading {
+  text-align: center;
+  font-size: var(--title-font);
+  font-weight: bold;
+}
+
+.main_cont .input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: fit-content;
+  padding: 1rem;
+  color: black;
+  border: none;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.main_cont .input label {
+  font-size: var(--label-font);
+}
+
+.main_cont .input input {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  color: black;
+}
+
+.main_cont .input input:focus {
+  border: 2px solid black;
+}
+
+.main_cont .btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: var(--third-color);
+  color: var(--secondary-color);
+  font-size: large;
+}
+
+.main_cont .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* End Form Pages */
+
+/* Start Navigation Bar */
+
+.navbar {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  background: var(--main-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: fixed;
+  top: 0;
+}
+
+.navbar a {
+  background-color: transparent;
+  color: var(--third-color);
+  font-size: var(--label-font);
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar a:hover {
+  transform: scale(1.1);
+}
+
+.navbar a#profile {
+  color: red;
+}
+
+/* End Navigation Bar */
+
+/* Start Table pages */
+
+.table_cont {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 25rem;
+}
+
+.table_cont .input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: fit-content;
+  padding: 1rem;
+  color: black;
+  border: none;
+  margin: 1rem auto;
+  width: 50%;
+}
+
+.table_cont .input label {
+  font-size: var(--label-font);
+}
+
+.table_cont .input input {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  color: black;
+}
+
+.table_cont table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.table_cont table tr {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+th:hover,
+td:hover {
+  background: var(--third-color);
+  color: var(--main-color);
+}
+
+.table_cont table th {
+  font-size: var(--label-font);
+  text-align: center;
+}
+
+.table_cont table td {
+  font-size: var(--td-font);
+}
+
+/* ENd Table Pages */

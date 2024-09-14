@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Admin</title>
+</head>
+<body>
+    <h1>Hello Admin</h1>
+    <p>Welcome to the admin dashboard. Here are your management options:</p>
+
+    <ul>
+        <li><a href="{% url 'add_user' %}">Add New User</a></li>
+        <li><a href="{% url 'user_list' %}">View All Users</a></li>
+        <li><a href="{% url 'admin:index' %}">Go to Django Admin Panel</a></li>
+        <li><a href="{% url 'home' %}">Log Out</a></li>
+    </ul>
+
+</body>
+</html>
+<style>
+    ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    color: #2980b9;
+}
+
+</style>
