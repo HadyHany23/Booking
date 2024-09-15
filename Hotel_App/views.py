@@ -9,6 +9,19 @@ from django.contrib.auth.decorators import user_passes_test
 def home(request):
     return render(request, 'index.html')
 
+def add_reservation(request):
+    return render(request, 'AddReservation.html')
+
+def add_hotel(request):
+    return render(request, 'AddHotel.html')
+
+
+def Available(request):
+    return render(request, 'AvailableHotels.html')
+
+def view_reservations(request):
+    return render(request, 'ViewReservation.html')
+
 def login_view(request):
     if request.method == 'POST':
         email = request.POST['username']

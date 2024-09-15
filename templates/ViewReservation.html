@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,18 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- custom css file link-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="ViewReservation.html">view reservations</a>
-        <a href="AddReservation.html">add reservation</a>
-        <a href="AvailableHotels.html">availabilty</a>
-        <a href="AddHotel.html">add hotels</a>
-        <a href="AddEmployee.html">employees</a>
-        <a id="profile" href="../index.html">profile</a>
-    </div>
 
 
 
@@ -53,7 +47,7 @@
 
 
     <!-- custom js file link -->
-    <script src="../js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 
