@@ -12,5 +12,10 @@ urlpatterns = [
     path('available-hotels', views.Available, name='available'),
     path('add-reservation', views.add_reservation, name='add_reservation'),
     path('Reservations', views.view_reservations, name='view_reservations'),
+    path('edit_customer/<int:id>/', views.edit_customer, name='edit_customer'),
+    path('delete_customer/<int:id>/', views.delete_customer, name='delete_customer'),
+    path('edit_hotel/<int:id>/', views.edit_hotel, name='edit_hotel'),
+    path('delete_hotel/<int:id>/', views.delete_hotel, name='delete_hotel'),
+
 
 ]
