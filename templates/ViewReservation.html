@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- custom css file link-->
+    <title>Reservations</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -18,31 +19,42 @@
 
     <div class="table_cont">
         <div class="input">
-            <label for="search">search</label>
-            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for names..">
+            <label for="search">Search</label>
+            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for Reservations...">
         </div>
-
         <table id="myTable">
             <thead>
                 <tr>
-                    <th onclick="sortTable(0)">Name</th>
-                    <th onclick="sortTable(1)">paid</th>
-                    <th onclick="sortTable(2)">Country</th>
+                    <th onclick="sortTable(0)">Customer Name</th>
+                    <th onclick="sortTable(1)">Customer Mobile</th>
+                    <th onclick="sortTable(2)">Customer Email</th>
                 </tr>
             </thead>
             <tbody>
+                {% for customer in customers %}
                 <tr>
-                    <td>ahmed</td>
-                    <td>80$</td>
-                    <td>ahmed01@gmail.com</td>
+                    <td>{{ customer.Cname }}</td>
+                    <td>{{ customer.Cnumber }}</td>
+                    <td>{{ customer.Cemail }}</td>
+                    <td id="icons">
+                        <a href="{% url 'edit_customer' customer.id %}">
+                            <i class="ri-edit-line"></i>
+                        </a>
+                    </td>
+                    <td id="icons">
+                        <a href="{% url 'delete_customer' customer.id %}" onclick="return confirm('Are you sure you want to delete this customer?');">
+                            <i class="ri-delete-bin-line"></i>
+                        </a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>aly</td>
-                    <td>60$</td>
-                    <td>aly02@gmail.com</td>
-                </tr>
+                {% endfor %}
             </tbody>
+            
         </table>
+        <div class="convert_btn">
+            <button id="word" onclick="exportTableToWord('myTable', 'TableDocument')">Export to Word</button>
+            <button id="excel" onclick="exportTableToExcel('myTable', 'table_data')">Export to Excel</button>
+        </div>
     </div>
 
 

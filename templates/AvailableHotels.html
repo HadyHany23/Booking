@@ -5,9 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Available Hotels</title>
     <!-- custom css file link-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 
 <body>
@@ -18,32 +20,43 @@
 
     <div class="table_cont">
         <div class="input">
-            <label for="search">search</label>
-            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for names..">
+            <label for="search">Search</label>
+            <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for hotel names...">
         </div>
         <table id="myTable">
             <thead>
                 <tr>
-                    <th onclick="sortTable(0)">hotel name</th>
-                    <th onclick="sortTable(1)">hotel price</th>
-                    <th onclick="sortTable(2)">location</th>
+                    <th onclick="sortTable(0)">Hotel Name</th>
+                    <th onclick="sortTable(1)">Hotel Price (EGP)</th>
+                    <th onclick="sortTable(2)">Location</th>
                 </tr>
             </thead>
             <tbody>
+                {% for hotel in hotels %}
                 <tr>
-                    <td>hilton</td>
-                    <td>80$</td>
-                    <td>cairo</td>
+                    <td>{{ hotel.name }}</td>
+                    <td>{{ hotel.price }} EGP</td>
+                    <td>{{ hotel.location }}</td>
+                    <td id="icons">
+                        <a href="{% url 'edit_hotel' hotel.id %}">
+                            <i class="ri-edit-line"></i>
+                        </a>
+                    </td>
+                    <td id="icons">
+                        <a href="{% url 'delete_hotel' hotel.id %}" onclick="return confirm('Are you sure you want to delete this hotel?');">
+                            <i class="ri-delete-bin-line"></i>
+                        </a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>baron</td>
-                    <td>60$</td>
-                    <td>luxor</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
+        <div class="convert_btn">
+            <button id="word" onclick="exportTableToWord('myTable', 'TableDocument')">Export to Word</button>
+            <button id="excel" onclick="exportTableToExcel('myTable', 'table_data')">Export to Excel</button>
+        </div>
     </div>
-
+    
 
     <!-- custom js file link -->
     <script src="{% static 'js/script.js' %}"></script>

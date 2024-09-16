@@ -16,17 +16,23 @@
 
     <div class="main_cont">
         <p class="heading">add reservation</p>
-        <form action="">
+        <form method="POST" action="{% url 'add_reservation' %}">
+            {% csrf_token %}
             <div class="input">
-                <label for="user_name">enter email</label>
-                <input type="text" id="user_name">
+                <label for="user_name">Customer Name</label>
+                <input type="text" id="user_name" name="customer">
             </div>
             <div class="input">
-                <label for="user_password">enter password</label>
-                <input type="text" id="user_password">
+                <label for="user_password">Customer Mobile</label>
+                <input type="text" id="user_password" name="customerM">
             </div>
+            <div class="input">
+                <label for="user_password">Customer Email</label>
+                <input type="text" id="user_password" name="customerE">
+            </div>
+            <button class="btn">add reservation</button>
+
         </form>
-        <button class="btn">add reservation</button>
     </div>
 
 </body>

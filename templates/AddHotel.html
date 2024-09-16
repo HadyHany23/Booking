@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Reservation</title>
+    <title>Add Hotel</title>
     <!-- custom css file link-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -15,19 +15,25 @@
 
 
 
-    <div class="main_cont">
+      <div class="main_cont">
         <p class="heading">add hotel</p>
-        <form action="">
+        <form method="POST"   action="{% url 'add_hotel' %}">
+            {% csrf_token %}
             <div class="input">
-                <label for="user_name">enter email</label>
-                <input type="text" id="user_name">
+                <label for="hotel_name">enter hotel name</label>
+                <input type="text" id="hotel_name" name="hname">
             </div>
             <div class="input">
-                <label for="user_password">enter password</label>
-                <input type="text" id="user_password">
+                <label for="hotel_price">enter price</label>
+                <input type="text" id="hotel_price" name="hprice">
             </div>
-        </form>
+            <div class="input">
+                <label for="hotel_location">enter location</label>
+                <input type="text" id="hotel_location" name="hlocation">
+            </div>
         <button class="btn">add hotel</button>
+    </form>
+
     </div>
 
 </body>
