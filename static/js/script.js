@@ -64,3 +64,44 @@ function sortTable(columnIndex) {
     isAscending ? "desc" : "asc"
   );
 }
+
+
+// Convert table to excel
+function exportTableToExcel(tableID, filename = '') {
+  // Get the table
+  let table = document.getElementById(tableID);
+  let workbook = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+
+  // Create filename
+  filename = filename ? filename + '.xlsx' : 'excel_data.xlsx';
+
+  // Export the file
+  XLSX.writeFile(workbook, filename);
+}
+
+
+// convert table to word
+function exportTableToWord(tableID, filename = '') {
+  // Get the table HTML
+  let table = document.getElementById(tableID).outerHTML;
+
+  // Word document preamble with basic styling
+  let preHtml = `
+      <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+      <head><meta charset="utf-8"><title>Export HTML To Word Document</title></head><body>`;
+  let postHtml = "</body></html>";
+  let html = preHtml + table + postHtml;
+
+  // Create a Blob of the table content
+  let blob = new Blob(['\ufeff', html], {
+    type: 'application/msword'
+  });
+
+  // Create a link to trigger the download
+  let link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = filename ? filename + '.doc' : 'document.doc';
+
+  // Trigger the download
+  link.click();
+}
